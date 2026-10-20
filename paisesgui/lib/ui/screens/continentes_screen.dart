@@ -63,7 +63,6 @@ class ContinenteRoundButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TO-DO
 
     // devolveremos un widget de tipo CircleAvatar con las siguientes propiedades
     // radius: 110
@@ -72,6 +71,13 @@ class ContinenteRoundButton extends StatelessWidget {
     // Para darle estilo al texto, puedes utilizar: style: Theme.of(context).textTheme.displayMedium,
     // (en el Main, hemos definido ya un estilo personalizado para la aplicación, por tanto, de aquí hacemos referencia a ese tema)
 
-    return const Placeholder();
+    return CircleAvatar(
+      radius: 110,
+      backgroundImage: NetworkImage(imagen),
+      child: Text(
+        nombre,
+        style: Theme.of(context).textTheme.displayMedium,
+      )
+    );
   }
 }
