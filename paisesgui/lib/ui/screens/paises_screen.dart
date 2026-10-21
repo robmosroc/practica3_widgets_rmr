@@ -58,10 +58,27 @@ class PaisCard extends StatelessWidget {
     // y el nombre del país.
 
     return Card(
-      child: Column(
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15)
+      ),
+      child: Stack(
         children: [
-          Image.network(imagen),
-          Text(nombre),
+          Image.network(
+            imagen,
+            //Usamos BoxFit.cover para que la imagen ocupe todo el widget
+            fit: BoxFit.cover,
+            height: 150,
+            //double.infinity hace que ocupe todo el ancho
+            width: double.infinity,
+            ),
+            //Utilizamos el widget Positioned para elegir la posicion del texto con las propiedades bottom y left
+            Positioned(
+              bottom: 20,
+              left: 20,
+              child:  Text(nombre, style: Theme.of(context).textTheme.displaySmall,)
+              )
+         ,
         ],
       ),
     );

@@ -51,7 +51,10 @@ class InfoPaisGeneral extends StatelessWidget {
                         "Capital: ${pais.capital ?? ''}"
                         ),
                       SizedBox(height: 20),
-                      Text(pais.descripcion ?? ""),
+                      Text(
+                        textAlign: TextAlign.justify,
+                        pais.descripcion ?? ""
+                        ),
                     ],
                   ),
                 ),
