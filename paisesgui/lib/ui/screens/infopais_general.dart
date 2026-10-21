@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:paisesgui/data/repositories/paises_repository.dart';
 import 'package:paisesgui/domain/entities/pais.dart';
@@ -25,23 +26,34 @@ class InfoPaisGeneral extends StatelessWidget {
     // Para comprobar que no os salís, podéis probar a girar el dispositivo (si lo estáis haciendo sobre Android)
 
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Scaffold(
         body: Center(
           child: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.network(
                   pais.imagen ?? "",
                   width: 750,
-                  height: 400,
                   ),
-                Text(pais.nombre,),
-                Text("Capital: ${pais.capital ?? ''}"),
-                SizedBox(height: 20),
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Text(pais.descripcion ?? ""),
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                        pais.nombre,
+                      ),
+                      Text(
+                        style: TextStyle(fontSize: 20, color: CupertinoColors.inactiveGray),
+                        "Capital: ${pais.capital ?? ''}"
+                        ),
+                      SizedBox(height: 20),
+                      Text(pais.descripcion ?? ""),
+                    ],
+                  ),
                 ),
               ],
           )

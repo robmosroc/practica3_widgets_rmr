@@ -51,7 +51,6 @@ class PaisesRepository {
         }).toList();
   }    
 
-  // TO-DO:
   // Implementar el método infoPais
   Pais infoPais() {
     return Pais.fromJSON(api.infoPais());
