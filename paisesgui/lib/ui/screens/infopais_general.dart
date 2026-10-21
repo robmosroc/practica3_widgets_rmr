@@ -25,7 +25,7 @@ class InfoPaisGeneral extends StatelessWidget {
     // Para comprobar que no os salís, podéis probar a girar el dispositivo (si lo estáis haciendo sobre Android)
 
     return Padding(
-      padding: const EdgeInsets.all(30.0),
+      padding: const EdgeInsets.all(15.0),
       child: Scaffold(
         body: Center(
           child: SingleChildScrollView(
@@ -36,12 +36,13 @@ class InfoPaisGeneral extends StatelessWidget {
                   width: 750,
                   height: 400,
                   ),
-                Text(
-                  pais.nombre,
-                  ),
+                Text(pais.nombre,),
                 Text("Capital: ${pais.capital ?? ''}"),
                 SizedBox(height: 20),
-                Text(pais.descripcion ?? ""),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Text(pais.descripcion ?? ""),
+                ),
               ],
           )
           ,)

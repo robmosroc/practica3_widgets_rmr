@@ -24,17 +24,33 @@ class InfoPaisDetalle extends StatelessWidget {
     // Podéis combinar Column y Row para mostrar la información tabulada
     return Scaffold(
       body: Center(
-        child: Column(
-          children: [
-            MyWeatherInfo(),
-            Row(
-              children: [
-                Text("Población: ${pais.poblacion ?? ""}"),
-                Text("Latitud: ${pais.latitud ?? ""}"),
-                Text("Longitud: ${pais.longitud ?? ""}"),
-              ],
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              MyWeatherInfo(),
+              Row(
+                spacing: 30,
+                mainAxisAlignment: MainAxisAlignment.center, 
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Población:"),
+                      Text("Latitud:"),
+                      Text("Longitud:"),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(pais.poblacion ?? ""),
+                      Text("${pais.latitud ?? ""}"),
+                      Text("${pais.longitud ?? ""}"),
+                    ],
+                  ),
+                ],
+              )  
+          ],),
         ), 
       ),
     );
