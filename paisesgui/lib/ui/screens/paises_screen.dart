@@ -58,6 +58,7 @@ class PaisCard extends StatelessWidget {
     // y el nombre del país.
 
     return Card(
+      //Sin el clip.antiAlias no se muestran los bordes redondeados
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15)
@@ -77,12 +78,10 @@ class PaisCard extends StatelessWidget {
               bottom: 20,
               left: 20,
               child:  Text(nombre, style: Theme.of(context).textTheme.displaySmall,)
-              )
+            )
          ,
         ],
       ),
     );
-
-  
   }
 }

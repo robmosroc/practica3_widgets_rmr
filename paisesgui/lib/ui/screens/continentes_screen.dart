@@ -34,6 +34,7 @@ class ContinentesScreen extends StatelessWidget {
 List<Widget> _creaListaContinentes(List<Continente> listaContinentes) {
   // Devolveremos una lista de widgets
   List<Widget> listaWidgets = [];
+  listaWidgets.add(const SizedBox(height: 30)); 
 
   // Recorremos la lista de continentes
   for (Continente continente in listaContinentes) {
@@ -44,9 +45,9 @@ List<Widget> _creaListaContinentes(List<Continente> listaContinentes) {
         imagen: continente.imagen ?? "",
       ),
     );
-    listaWidgets.add(
-      const SizedBox(height: 20),
-    ); // Añadimos un espacio después del widget con el continente
+    listaWidgets.add(const SizedBox(height: 20)); 
+    
+ // Añadimos un espacio después del widget con el continente
   }
   return listaWidgets;
 }

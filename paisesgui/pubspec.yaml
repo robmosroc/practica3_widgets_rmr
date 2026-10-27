@@ -19,7 +19,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/
-    - assets/icons/license/
     - assets/icons/png/
   fonts:
     - family: LeckerliOne

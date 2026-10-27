@@ -26,29 +26,35 @@ class InfoPaisDetalle extends StatelessWidget {
       body: Center(
         child: SingleChildScrollView(
           child: Column(
+            spacing: 15,
             children: [
               MyWeatherInfo(),
-              Row(
-                spacing: 30,
-                mainAxisAlignment: MainAxisAlignment.center, 
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Población:"),
-                      Text("Latitud:"),
-                      Text("Longitud:"),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(pais.poblacion ?? ""),
-                      Text("${pais.latitud ?? ""}"),
-                      Text("${pais.longitud ?? ""}"),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Población:"),
+                          Text("Latitud:"),
+                          Text("Longitud:"),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(pais.poblacion ?? ""),
+                          Text("${pais.latitud ?? ""}"),
+                          Text("${pais.longitud ?? ""}"),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               )  
           ],),
         ), 
