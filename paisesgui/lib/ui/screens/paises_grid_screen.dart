@@ -61,7 +61,7 @@ class PaisCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // Devuelve un widget de tipo Card, con el diseño que desees, pero
     // que muestre la imagen  (obtenida de Internet a partir de la url)
-    // y el nombre del país.
+    // y el nombre del país. 
 
     return Card(
       //Sin el clip.antiAlias no se muestran los bordes redondeados
